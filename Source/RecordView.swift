@@ -18,8 +18,8 @@ public class RecordView: UIView, CAAnimationDelegate {
     private var mTransform: CGAffineTransform!
     private var audioPlayer: AudioPlayer!
     
-    private var timerStackView: UIStackView!
-    private var slideToCancelStackVIew: UIStackView!
+    public var timerStackView: UIStackView!
+    public var slideToCancelStackVIew: UIStackView!
 
     public weak var delegate: RecordViewDelegate?
     public var offset: CGFloat = 20
@@ -57,7 +57,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     }
 
 
-    private let arrow: UIImageView = {
+    public let arrow: UIImageView = {
         let arrowView = UIImageView()
         arrowView.image = UIImage.fromPod("arrow")
         arrowView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ public class RecordView: UIView, CAAnimationDelegate {
         return arrowView
     }()
 
-    private let slideLabel: UILabel = {
+    public let slideLabel: UILabel = {
         let slide = UILabel()
         slide.text = "Slide To Cancel"
         slide.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ public class RecordView: UIView, CAAnimationDelegate {
         return slide
     }()
 
-    private var timerLabel: UILabel = {
+    public var timerLabel: UILabel = {
         let label = UILabel()
         label.text = "00:00"
         label.font = label.font.withSize(12)
