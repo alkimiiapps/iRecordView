@@ -69,7 +69,8 @@ class BucketImageView: UIImageView, CAAnimationDelegate {
 
     private func setup() {
 
-        smallMicImage = UIImage.fromPod("mic_red")
+        let imageMic: UIImage = UIImage.fromPod("mic_red")
+        smallMicImage = imageMic.resizedImage()
 
 
         let bucketLidImage = UIImage.fromPod("bucket_lid")
@@ -285,4 +286,14 @@ class BucketImageView: UIImageView, CAAnimationDelegate {
         }
     }
 
+}
+extension UIImage {
+    func resizedImage(width: CGFloat = 30, height: CGFloat = 33.5) -> UIImage {
+        let canvas = CGSize(width: width, height: height)
+        let format = UIGraphicsImageRendererFormat.default()
+        let smallerImage = UIGraphicsImageRenderer(size: canvas, format: format).image { _ in
+            self.draw(in: CGRect(origin: .zero, size: canvas))
+        }
+        return smallerImage
+    }
 }
