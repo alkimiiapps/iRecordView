@@ -16,7 +16,7 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
     private var mTransform: CGAffineTransform?
     private var buttonCenter, slideCenter: CGPoint?
 
-    private var touchDownAndUpGesture: iGesutreRecognizer!
+    public var touchDownAndUpGesture: iGesutreRecognizer!
     private var moveGesture: UIPanGestureRecognizer!
 
     public var listenForRecord: Bool! {
