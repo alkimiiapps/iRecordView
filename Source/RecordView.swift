@@ -92,7 +92,7 @@ public class RecordView: UIView, CAAnimationDelegate {
         timerStackView = UIStackView(arrangedSubviews: [bucketImageView, timerLabel])
         timerStackView.translatesAutoresizingMaskIntoConstraints = false
         timerStackView.isHidden = true
-        timerStackView.spacing = 5
+        timerStackView.spacing = 10
 
 
         slideToCancelStackVIew = UIStackView(arrangedSubviews: [arrow, slideLabel])
@@ -107,7 +107,7 @@ public class RecordView: UIView, CAAnimationDelegate {
         arrow.widthAnchor.constraint(equalToConstant: 15).isActive = true
         arrow.heightAnchor.constraint(equalToConstant: 15).isActive = true
 
-        slideToCancelStackVIew.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        slideToCancelStackVIew.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100).isActive = true
         slideToCancelStackVIew.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 

@@ -84,7 +84,7 @@ class BucketImageView: UIImageView, CAAnimationDelegate {
         bucketBodyLayer.frame = CGRect(x: 0, y: bucketLidImage.size.height + 2, width: bucketBodyImage.size.width, height: bucketBodyImage.size.height)
 
 
-        micLayer.frame = CGRect(x: 0, y: -10, width: 30, height: 33.5)
+        micLayer.frame = CGRect(x: 0, y: -5, width: 30, height: 33.5)
         micLayer.bounds = CGRect(x: 0, y: 0, width: 30, height: 33.5)
         micLayer.contents = smallMicImage.cgImage
 
