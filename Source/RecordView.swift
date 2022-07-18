@@ -85,9 +85,8 @@ public class RecordView: UIView, CAAnimationDelegate {
         bucketImageView = BucketImageView(frame: frame)
         bucketImageView.animationDelegate = self
         bucketImageView.translatesAutoresizingMaskIntoConstraints = false
-        bucketImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        bucketImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        bucketImageView.smallMicImage = bucketImageView.smallMicImage.resizedImage()
+        bucketImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        bucketImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
 
         timerStackView = UIStackView(arrangedSubviews: [bucketImageView, timerLabel])
@@ -329,16 +328,5 @@ extension RecordView: AnimationFinishedDelegate {
 private extension RecordView {
     func isLessThanOneSecond() -> Bool {
         return duration < 1
-    }
-}
-
-extension UIImage {
-    func resizedImage(width: CGFloat = 50, height: CGFloat = 50) -> UIImage {
-        let canvas = CGSize(width: width, height: height)
-        let format = UIGraphicsImageRendererFormat.default()
-        let smallerImage = UIGraphicsImageRenderer(size: canvas, format: format).image { _ in
-            self.draw(in: CGRect(origin: .zero, size: canvas))
-        }
-        return smallerImage
     }
 }
