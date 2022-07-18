@@ -85,8 +85,8 @@ public class RecordView: UIView, CAAnimationDelegate {
         bucketImageView = BucketImageView(frame: frame)
         bucketImageView.animationDelegate = self
         bucketImageView.translatesAutoresizingMaskIntoConstraints = false
-        bucketImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        bucketImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        bucketImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        bucketImageView.heightAnchor.constraint(equalToConstant: 33.5).isActive = true
 
 
         timerStackView = UIStackView(arrangedSubviews: [bucketImageView, timerLabel])
